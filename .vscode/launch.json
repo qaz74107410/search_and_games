@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pacman debug",
+      "type": "python",
+      "request": "launch",
+      "program": "pacman.py",
+      // run with args "-l mediumMaze -p SearchAgent -a fn=bfs"
+      "args": [
+        "-l", "${input:layout}", 
+        "-p", "${input:searchAgent}",
+         "-a", "fn=${input:aglorithm}"
+        ],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "layout",
+      "description": "layout ของแผนที่",
+      "default": "mediumMaze",
+      "type": "promptString"
+    },
+    {
+      "id": "searchAgent",
+      "description": "agent ที่จะใช้",
+      "default": "SearchAgent",
+      "type": "promptString"
+    },
+    {
+      "id": "aglorithm",
+      "description": "algorithm ที่จะใช้",
+      "default": "bfs",
+      "type": "promptString"
+    }
+  ]
+}
